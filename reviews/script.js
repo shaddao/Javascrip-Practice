@@ -34,7 +34,10 @@ const reviews = [
     }
 ];
 
+// random number to access the review array of objects and display random review
 let randomCounter = Math.floor(Math.random() * reviews.length);
+
+// copies the random number to counter to be used for the arrow buttons 
 let counter = randomCounter;
 
 function change(n) {
@@ -43,6 +46,7 @@ function change(n) {
     job.textContent = reviews[n].job;
     info.textContent = reviews[n].review;
 }
+//posts random review when loaded
 change(randomCounter);
 
 
@@ -53,6 +57,7 @@ leftArrow.addEventListener('click', () => {
     }
     change(counter);
 })
+
 rightArrow.addEventListener('click', () => {
     counter++;
     if (counter > reviews.length - 1) {
@@ -60,6 +65,7 @@ rightArrow.addEventListener('click', () => {
     }
     change(counter);
 })
+
 randomButton.addEventListener('click', () => {
     counter = Math.floor(Math.random() * reviews.length);
     change(counter)
